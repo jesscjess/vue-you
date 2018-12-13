@@ -1,9 +1,7 @@
 <template>
   <div class="card text-white bg-secondary mb-3" style="max-width: 20rem;">
-    <div class="card-header">{{header}}</div>
+    <div class="card-header bg-secondary">{{header}}</div>
     <div class="card-body" :style=" 'background-image:url('+image +')' ">
-      <!-- <h4 class="card-title">Primary card title</h4>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
     </div>
   </div>
 </template>
@@ -20,11 +18,24 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+  .card{
+    overflow: hidden;
+  }
+
+  .card-header{
+    z-index: 1;
+  }
+  
   .card-body{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     min-height: 300px;
+    transition: all 1s ease;
+
+    &:hover{
+      transform:scale(1.25);
+    }
   }
 
 </style>

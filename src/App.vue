@@ -53,4 +53,8 @@ export default {
   margin-top: 50px;
 }
 
+.uppercase {
+    text-transform: uppercase;
+}
+
 </style>
