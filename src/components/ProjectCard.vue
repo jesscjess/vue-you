@@ -1,5 +1,7 @@
 <template>
-  <div class="card text-white bg-secondary mb-3" style="max-width: 20rem;">
+  <div class="card text-white bg-secondary mb-3" >
+    <router-link :to="'/project/'+projectId" class="card-link_overlay">
+    </router-link>
     <div class="card-header bg-secondary">{{header}}</div>
     <div class="card-body" :style=" 'background-image:url('+image +')' ">
     </div>
@@ -11,7 +13,8 @@ export default {
   name: 'ProjectCard',
   props: {
     header: String,
-    image: String
+    image: String,
+    projectId: String
   }
 }
 </script>
@@ -20,10 +23,28 @@ export default {
 <style lang="scss" scoped>
   .card{
     overflow: hidden;
+    max-width: 20rem;
+    position: relative;
+    display: block;
+
+    &:hover{
+      .card-body{
+        transform:scale(1.25);
+      }
+    }
+  }
+
+  .card-link_overlay{
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
   }
 
   .card-header{
     z-index: 1;
+    position: absolute;
   }
   
   .card-body{
@@ -32,10 +53,7 @@ export default {
     background-position: center;
     min-height: 300px;
     transition: all 1s ease;
-
-    &:hover{
-      transform:scale(1.25);
-    }
+    z-index: 0;
   }
 
 </style>

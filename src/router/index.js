@@ -2,8 +2,12 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '../pages/Home'
 import Projects from '../pages/Projects'
+import NewProject from '../pages/NewProject'
+import ProjectView from '../pages/ProjectView'
 import Resume from '../pages/Resume'
 import Reviews from '../pages/Reviews'
+import Contact from '../pages/Contact'
+import Admin from '../pages/Admin'
 import NotFound from '../pages/404.vue'
 
 Vue.use(Router)
@@ -21,6 +25,11 @@ export default new Router({
       component: Projects
     },
     {
+      path: '/project/:id',
+      name: 'ProjectView',
+      component: ProjectView
+    },
+    {
       path: '/resume',
       name: 'Resume',
       component: Resume
@@ -30,12 +39,22 @@ export default new Router({
       name: 'Reviews',
       component: Reviews
     },
-    // TODO: Create contact page
-    // {
-    //   path: '/contact',
-    //   name: 'Contact',
-    //   component: Contact
-    // },
+    {
+      path: '/contact',
+      name: 'Contact',
+      component: Contact
+    },
+    // Note: not on nav bar
+    {
+      path: '/admin',
+      name: 'Admin',
+      component: Admin
+    },
+    {
+      path: '/admin/new-project',
+      name: 'NewProject',
+      component: NewProject
+    },
     { 
       path: '*',
       name: "NotFound",

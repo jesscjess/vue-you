@@ -7,9 +7,7 @@
     </div>
     <div class="row">
       <div class="col-4" v-for="project in projects" :key="project.key">
-        
-        <ProjectCard :header="project.header" :image="project.image" />
-
+        <ProjectCard :header="project.header" :image="project.image" :projectId="project.key" />
       </div>
     </div>
   </div>
@@ -27,22 +25,22 @@ import ProjectCard  from '../components/ProjectCard.vue'
       return {
         projects: [
           {
-            key: 'proj1',
+            key: 'project-1',
             header: 'Project 1',
             image: 'https://i.pinimg.com/564x/82/9d/41/829d41004616974e0075c3d073ff030c.jpg'
           },
           {
-            key: 'proj2',
+            key: 'project-2',
             header: 'Project 2',
             image: 'https://i.pinimg.com/564x/6c/55/27/6c552790b4cecb5dc99a13a6e255f4bb.jpg'
           },
           {
-            key: 'proj3',
+            key: 'project-3',
             header: 'Project 3',
             image: 'https://i.pinimg.com/564x/15/31/5a/15315aed5971f5ccd7cf6f3da39fcf77.jpg'
           },
           {
-            key: 'proj4',
+            key: 'project-4',
             header: 'Project 4',
             image: 'https://i.pinimg.com/564x/e7/85/11/e7851137e26a00247318c1d20fb4be19.jpg'
           }
